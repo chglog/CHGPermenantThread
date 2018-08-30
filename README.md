@@ -27,3 +27,20 @@
         // 你要在子线程里做的事情
         NSLog(@"执行任务 - %@", [NSThread currentThread]);
     }];
+    // 主动销毁该子线程
+    [self.thread stop];
+
+
+# 核心实现代码 
+ 
+        
+        self.innerThread = [[CHGThread alloc] initWithBlock:^{
+            // 往RunLoop里面添加Source\Timer\Observer
+            [[NSRunLoop currentRunLoop] addPort:[[NSPort alloc] init] forMode:NSDefaultRunLoopMode];
+            
+            // 只要没有主动或被动退出loop 那么就继续让loop跑起来
+            while (weakSelf && !weakSelf.isStopped) {
+                // 这个方法在没有任务时就睡眠  任务完成了就会退出loop
+                [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+            }
+        }];
