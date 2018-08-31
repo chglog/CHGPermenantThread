@@ -31,7 +31,7 @@
     [self.thread stop];
 
 
-# 核心实现代码 
+# OC版本核心实现代码 
  
         
         self.innerThread = [[CHGThread alloc] initWithBlock:^{
