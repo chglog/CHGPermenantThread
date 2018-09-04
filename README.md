@@ -74,3 +74,6 @@ self.innerThread = [[CHGThread alloc] initWithBlock:^{
             //            }
             
         }];
+
+[迁移指南](https://www.cnblogs.com/chglog/p/9585068.html)
+
