@@ -13,9 +13,9 @@ typedef void (^CHGPermenantThreadTask)(void);
 @interface CHGPermenantThread : NSObject
 
 
-/**
- 开启线程，默认自动开启
- */
+///**
+// 开启线程，默认自动开启
+// */
 //- (void)run;
 
 /**

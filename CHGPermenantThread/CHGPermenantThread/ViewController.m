@@ -21,6 +21,7 @@
     
     // 创建一个保活线程，直到ViewController销毁，或者主动调用stop
     self.thread = [[CHGPermenantThread alloc] init];
+    
 }
 
 // 点击空白区
