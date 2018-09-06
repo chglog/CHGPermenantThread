@@ -52,7 +52,8 @@
 
 # c语言版本核心实现代码：
 
-self.innerThread = [[CHGThread alloc] initWithBlock:^{
+
+        self.innerThread = [[CHGThread alloc] initWithBlock:^{
             // 创建上下文（要初始化一下结构体）
             CFRunLoopSourceContext context = {0};
             
